@@ -1,0 +1,14 @@
+{
+    "name": "nivel-root",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "postinstall": "cd MotionPluginAngular && npm install",
+        "start": "cd MotionPluginAngular && npm start",
+        "build": "cd MotionPluginAngular && npm run build",
+        "capacitor:sync": "cd MotionPluginAngular && npx cap sync",
+        "capacitor:build:android": "cd MotionPluginAngular && npm run build && npx cap sync android"
+    },
+    "dependencies": {},
+   "devDependencies": {}
+}
