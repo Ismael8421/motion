@@ -1,19 +1,18 @@
-<div class="sensor-container">
-  <div class="sensor-section">
-    <h2>Acelerómetro</h2>
-    <div class="sensor-data">
-      <p>X: {{motionData.acceleration?.x ?? 'No data'}}</p>
-      <p>Y: {{motionData.acceleration?.y ?? 'No data'}}</p>
-      <p>Z: {{motionData.acceleration?.z ?? 'No data'}}</p>
+<div class="iphone-level">
+  <div class="angle-display">
+    <div class="angle-value" [style.color]="getAngleColor(currentAngle)">
+      {{formatAngle(currentAngle)}}
     </div>
+    <div class="angle-label">Nivel</div>
   </div>
 
-  <div class="sensor-section">
-    <h2>Giroscopio</h2>
-    <div class="sensor-data">
-      <p>Alpha: {{motionData.rotation?.alpha ?? 'No data'}}°</p>
-      <p>Beta: {{motionData.rotation?.beta ?? 'No data'}}°</p>
-      <p>Gamma: {{motionData.rotation?.gamma ?? 'No data'}}°</p>
+  <div class="level-visualization">
+    <div class="center-line" [class.level]="isLevel()"></div>
+    <div class="degree-scale">
+      <div class="tick" *ngFor="let angle of [-30, -20, -10, 0, 10, 20, 30]" 
+           [class.zero-tick]="angle === 0">
+        <span>{{angle}}°</span>
+      </div>
     </div>
   </div>
 </div>
